@@ -24,4 +24,4 @@ Taking a timed quiz on JavaScript fundamentals that stores high scores
 https://github.com/BlessingI/codeQuiz.git
 
 ## Web Site link
-https://blessingi.github.io/Password-Generator/
+https://blessingi.github.io/codeQuiz/
