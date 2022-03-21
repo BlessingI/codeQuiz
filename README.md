@@ -21,7 +21,7 @@ Taking a timed quiz on JavaScript fundamentals that stores high scores
 20 March 2022
 
 ## Repository link
-https://github.com/BlessingI/Password-Generator.git
+https://github.com/BlessingI/codeQuiz.git
 
 ## Web Site link
 https://blessingi.github.io/Password-Generator/
