@@ -35,6 +35,10 @@ body{
     margin: auto;
 }
 
+.start{
+    display: none;
+}
+
 .element{
     position: absolute;
     top: 50%; left: 50%;
@@ -61,3 +65,37 @@ body{
     font-size: 15px;
 }
 
+
+table {
+    margin-left: 50px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.questions-text {
+    display: flex;
+}
+
+.questions-row{
+    margin: 10px;
+}
+
+.quest {
+    width: 400px;
+}
+
+.questions-title{
+    font-size: 1.55em;
+}
+
+tr td{
+    background-color: #551A8B;
+    color: var(--secondary-color);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+tr:hover {
+    outline: none;
+    cursor: pointer;
+}
