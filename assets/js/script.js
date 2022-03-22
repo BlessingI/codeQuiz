@@ -10,6 +10,8 @@ let box2 = document.querySelector('.box2');
 let box3 = document.querySelector('.box3');
 let answerTag = document.querySelector('.answerTag');
 let allDone = document.querySelector('.allDone');
+let button = document.querySelector('.btn');
+const itemInput = document.querySelector("input[type=text]");
 
 
 
@@ -63,12 +65,15 @@ const seeAnswer3 = (event) => {
     }
     question3.style.display = 'none'
     allDone.style.display = 'block'
+    
 }
 
+button.addEventListener('click', buttonClick)
 
-
-
-
+function buttonClick(e) {
+    e.preventDefault()
+    console.log(itemInput.value)
+}
 
 box.addEventListener('click', seeAnswer)
 box1.addEventListener('click', seeAnswer1)
