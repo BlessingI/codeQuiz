@@ -10,17 +10,40 @@ let box2 = document.querySelector('.box2');
 let box3 = document.querySelector('.box3');
 let answerTag = document.querySelector('.answerTag');
 let allDone = document.querySelector('.allDone');
-let button = document.querySelector('.btn');
-const itemInput = document.querySelector("input[type=text]");
-let totalScore = document.querySelector('.totalScore')
+let itemInput = document.querySelector("input[type=text]");
+let totalScore = document.querySelector('.totalScore');
+let questionSection = document.querySelector('.questionSection');
+let timeElm = document.getElementById('timer');
 let quizzScore = 0
+let setTime;
 
 
 
 const quizzStart = () => {
     start.style.display ="none"
     question.style.display = 'block'
+
+    timex(40);
     
+}
+
+let timex = function(x) {
+    if(x === -1) {
+        questionSection.style.display ='none'
+        allDone.style.display = 'block'
+        totalScore.textContent = quizzScore
+        return;
+    }
+
+    timeElm.innerHTML = x;
+    setTime = setTimeout(() => {timex(--x)}, 1000)
+
+    return setTime;
+ }
+
+
+function stopFunction() {
+    clearInterval(setTime)
 }
 
 const seeAnswer = (event) => {
@@ -38,7 +61,6 @@ const seeAnswer = (event) => {
     question1.style.display = 'block'
     
 }
-
 
 
 const seeAnswer1 = (event) => {
@@ -85,18 +107,15 @@ const seeAnswer3 = (event) => {
         answerTag.textContent = 'wrong'
         setTimeout(() => {answerTag.textContent=""}, 300);
     }
-    question3.style.display = 'none'
-    allDone.style.display = 'block'
-    totalScore.textContent = quizzScore
+    question3.style.display = 'none';
+    allDone.style.display = 'block';
+    totalScore.textContent = quizzScore;
+    stopFunction()
 }
 
-button.addEventListener('click', buttonClick)
 
-function buttonClick(e) {
-    e.preventDefault()
-    console.log(itemInput.value)
-}
 
+// button.addEventListener('click', buttonClick)
 box.addEventListener('click', seeAnswer)
 box1.addEventListener('click', seeAnswer1)
 box2.addEventListener('click', seeAnswer2)

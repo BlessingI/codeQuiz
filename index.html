@@ -14,7 +14,7 @@
     <header class="container-fluid">
         <div class="row mx-2 my-2 d-flex justify-content-between">
             <a href="">View Highscores</a>
-            <p>Time:0</p>
+            <p>Time:<span id="timer">40</span> seconds!</p>
         </div>
     </header>
 
@@ -29,7 +29,7 @@
     </section>
 
     <div class="container text-center">
-        <section class="questionSection">
+        <div class="questionSection">
             <div  class="question">
                 <h3 class="questions-title">Arrays in Javascript can be used to store: </h3>
     
@@ -76,21 +76,21 @@
                 </div>
             </div>
 
-            <div class="allDone">
-                <h3 class="questions-title">All done</h3>
-    
-                <div class="box4">
-                    <div>Your final score is: <span class="totalScore"></span></div>
-                    <form>
-                        <label for="initials">Your Name</label>
-                        <input type="text" id="initials" placeholder="initials">
-                        <button class="btn" type="submit">Submit</button>
-                    </form>
-                </div>
-            </div>
-
+        </div>
     </div>
-    </section>
+
+    <div class="container text-center allDone">
+        <h3 class="questions-title">All done</h3>
+
+        <div class="box4">
+            <div>Your final score is: <span class="totalScore"></span></div>
+            <form>
+                <label for="initials">Your Name</label>
+                <input type="text" id="initials" placeholder="initials">
+                <button class="btn" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
 
     <div class="container">
         <div class="row text-center">
