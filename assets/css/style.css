@@ -1,4 +1,4 @@
-:root {
+/* :root {
     --primary-color: #551A8B;
     --secondary-color: #ffffff;
 }
@@ -33,7 +33,7 @@ body{
     width:90vw;
     height: 90vh;
     margin: auto;
-}
+} */
 
 /* .start{
    display: none;
@@ -61,7 +61,7 @@ body{
 
 
 
-.questionSection{
+/* .questionSection{
     text-align: center;
 }
 
@@ -89,7 +89,7 @@ body{
     font-weight: 400px;
     margin: 1em;
     font-size: 15px;
-}
+} */
 
 .box:hover {
     outline: none;

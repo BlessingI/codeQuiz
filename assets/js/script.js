@@ -12,6 +12,8 @@ let answerTag = document.querySelector('.answerTag');
 let allDone = document.querySelector('.allDone');
 let button = document.querySelector('.btn');
 const itemInput = document.querySelector("input[type=text]");
+let totalScore = document.querySelector('.totalScore')
+let quizzScore = 0
 
 
 
@@ -24,20 +26,31 @@ const quizzStart = () => {
 const seeAnswer = (event) => {
     let quest1 = event.target.dataset['number']
     if(quest1 == 4) {
+        quizzScore= quizzScore + 25
+        console.log(quizzScore)
         answerTag.textContent = 'correct'
-        setTimeout(() => {answerTag.textContent=""}, 500);
+        setTimeout(() => {answerTag.textContent=""}, 300);
+    } else {
+        answerTag.textContent = 'wrong'
+        setTimeout(() => {answerTag.textContent=""}, 300);
     }
     question.style.display = 'none'
-    setTimeout(() => {question1.style.display = 'block'}, 700);
+    question1.style.display = 'block'
     
 }
+
 
 
 const seeAnswer1 = (event) => {
     let quest2 = event.target.dataset['number']
     if(quest2 == 3) {
+        quizzScore = quizzScore + 25
+        console.log(quizzScore)
         answerTag.textContent = 'correct'
-        setTimeout(() => {answerTag.textContent=""}, 500);
+        setTimeout(() => {answerTag.textContent=""}, 300);
+    } else {
+        answerTag.textContent = 'wrong'
+        setTimeout(() => {answerTag.textContent=""}, 300);
     }
     question1.style.display = 'none'
     question2.style.display = 'block'
@@ -48,24 +61,33 @@ const seeAnswer1 = (event) => {
 const seeAnswer2 = (event) => {
     let quest3 = event.target.dataset['number']
     if(quest3 == 1) {
+        quizzScore = quizzScore + 25
+        console.log(quizzScore)
         answerTag.textContent = 'correct'
-        setTimeout(() => {answerTag.textContent=""}, 500);
+        setTimeout(() => {answerTag.textContent=""}, 300);
+    } else {
+        answerTag.textContent = 'wrong'
+        setTimeout(() => {answerTag.textContent=""}, 300);
     }
     question2.style.display = 'none'
     question3.style.display = 'block'
-    
 }
 
 
 const seeAnswer3 = (event) => {
     let quest4 = event.target.dataset['number']
     if(quest4 == 4) {
+        quizzScore = quizzScore + 25
+        console.log(quizzScore)
         answerTag.textContent = 'correct'
-        setTimeout(() => {answerTag.textContent=""}, 500);
+        setTimeout(() => {answerTag.textContent=""}, 300);
+    } else {
+        answerTag.textContent = 'wrong'
+        setTimeout(() => {answerTag.textContent=""}, 300);
     }
     question3.style.display = 'none'
     allDone.style.display = 'block'
-    
+    totalScore.textContent = quizzScore
 }
 
 button.addEventListener('click', buttonClick)

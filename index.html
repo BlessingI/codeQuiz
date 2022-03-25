@@ -6,88 +6,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Quiz</title>
     <link rel="stylesheet" href="./assets/css/style.css">
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <body>
-    <header>
-        <div class="header-style">
+    <header class="container-fluid">
+        <div class="row mx-2 my-2 d-flex justify-content-between">
             <a href="">View Highscores</a>
-            <p>Time:</p>
+            <p>Time:0</p>
         </div>
     </header>
 
-    <section class="container start">
-        <div class="element">
-            <h1>Coding Quiz Challenge</h1>
-            <p>Try to answer the following code-related questions whithin the time limit. Keep in mind that incorrect answers will penelize your scoretime by ten seconds!</p>
-            <button> Start Quiz</button>
+    <section class="container text-center start">
+        <div class="row">
+            <div class="column ">
+                <h1>Coding Quiz Challenge</h1>
+                <p>Try to answer the following code-related questions whithin the time limit. Keep in mind that incorrect answers will penelize your scoretime by ten seconds!</p>
+                <button> Start Quiz</button>
+            </div>
         </div>
-
     </section>
 
-    <section class="questionSection">
-        <div  class="question">
-            <h3 class="questions-title">Arrays in Javascript can be used to store: </h3>
-
-            <div class="box">
-                <div data-number="1" data-state="hidden">1. numbers and string</div>
-                <div data-number="2" data-state="hidden">2. other arrays</div>
-                <div data-number="3" data-state="hidden">3. booleans</div>
-                <div data-number="4" data-state="hidden">4. all of the above</div>
+    <div class="container text-center">
+        <section class="questionSection">
+            <div  class="question">
+                <h3 class="questions-title">Arrays in Javascript can be used to store: </h3>
+    
+                <div class="box">
+                    <div data-number="1" data-state="hidden">1. numbers and string</div>
+                    <div data-number="2" data-state="hidden">2. other arrays</div>
+                    <div data-number="3" data-state="hidden">3. booleans</div>
+                    <div data-number="4" data-state="hidden">4. all of the above</div>
+                </div>
             </div>
-        </div>
-       
-
-        <div class="question2">
-            <h3 class="questions-title">Commonly used data types do Not include: </h3>
-
-            <div class="box1">
-                <div data-number="1" data-state="hidden">1. string</div>
-                <div data-number="2" data-state="hidden">2. booleans</div>
-                <div data-number="3" data-state="hidden">3. alerts</div>
-                <div data-number="4" data-state="hidden">4. numbers</div>
+           
+    
+            <div class="question2">
+                <h3 class="questions-title">Commonly used data types do Not include: </h3>
+    
+                <div class="box1">
+                    <div data-number="1" data-state="hidden">1. string</div>
+                    <div data-number="2" data-state="hidden">2. booleans</div>
+                    <div data-number="3" data-state="hidden">3. alerts</div>
+                    <div data-number="4" data-state="hidden">4. numbers</div>
+                </div>
             </div>
-        </div>
-
-        <div class="question3">
-            <h3 class="questions-title">The condition in an if/else statement is enclosed within </h3>
-
-            <div class="box2">
-                <div data-number="1" data-state="hidden">1. quotes</div>
-                <div data-number="2" data-state="hidden">2. curely brackets</div>
-                <div data-number="3" data-state="hidden">3. parenthesis</div>
-                <div data-number="4" data-state="hidden">4. square brackets</div>
+    
+            <div class="question3">
+                <h3 class="questions-title">The condition in an if/else statement is enclosed within </h3>
+    
+                <div class="box2">
+                    <div data-number="1" data-state="hidden">1. quotes</div>
+                    <div data-number="2" data-state="hidden">2. curely brackets</div>
+                    <div data-number="3" data-state="hidden">3. parenthesis</div>
+                    <div data-number="4" data-state="hidden">4. square brackets</div>
+                </div>
             </div>
-        </div>
-
-
-        <div class="question4">
-            <h3 class="questions-title">A very useful tool used during development and debugging for printing content to the debugger is!</h3>
-
-            <div class="box3">
-                <div data-number="1" data-state="hidden">1. Javascript</div>
-                <div data-number="2" data-state="hidden">2. terminal/bash</div>
-                <div data-number="3" data-state="hidden">3. for loops</div>
-                <div data-number="4" data-state="hidden">4. console.log</div>
+    
+    
+            <div class="question4">
+                <h3 class="questions-title">A very useful tool used during development and debugging for printing content to the debugger is!</h3>
+    
+                <div class="box3">
+                    <div data-number="1" data-state="hidden">1. Javascript</div>
+                    <div data-number="2" data-state="hidden">2. terminal/bash</div>
+                    <div data-number="3" data-state="hidden">3. for loops</div>
+                    <div data-number="4" data-state="hidden">4. console.log</div>
+                </div>
             </div>
-        </div>
 
-
-        <div class="allDone">
-            <h3 class="questions-title">All done</h3>
-
-            <div class="box4">
-                <div>Your final score is</div>
-                <form>
-                    <label for="initials">Your Name</label>
-                    <input type="text" id="initials" placeholder="initials">
-                    <button class="btn" type="submit">Submit</button>
-                </form>
+            <div class="allDone">
+                <h3 class="questions-title">All done</h3>
+    
+                <div class="box4">
+                    <div>Your final score is: <span class="totalScore"></span></div>
+                    <form>
+                        <label for="initials">Your Name</label>
+                        <input type="text" id="initials" placeholder="initials">
+                        <button class="btn" type="submit">Submit</button>
+                    </form>
+                </div>
             </div>
-        </div>
 
+    </div>
     </section>
 
-    <section class="answerTag"></section>
+    <div class="container">
+        <div class="row text-center">
+            <div class="container answerTag"></div>
+        </div>
+    </div>
 
     <script src="./assets/js/script.js"></script>
 </body>
