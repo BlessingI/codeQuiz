@@ -1,4 +1,5 @@
 let startQuiz = document.querySelector('button');
+let goback = document.querySelector('.goback')
 let start = document.querySelector('.start');
 let question = document.querySelector('.question');
 let question1 = document.querySelector('.question2');
@@ -16,12 +17,17 @@ let questionSection = document.querySelector('.questionSection');
 let timeElm = document.getElementById('timer');
 let initialInput = document.querySelector('.initialInput')
 let submitButton = document.getElementById('submitButton')
-let typedName = document.querySelector('.typedName')
-let scoredSpace = document.querySelector('.scoredSpace')
+// let typedName = document.querySelector('.typedName')
+// let scoredSpace = document.querySelector('.scoredSpace')
 let element;
-let quizzScore = 0
+let quizzScore = 0;
 let setTime;
 let y;
+
+goback.addEventListener('click', function(event){
+    initialInput.style.display = 'none'
+    start.style.display ="block"
+})
 
 itemInput.addEventListener('input', function(event){
     element = event.target.value
@@ -134,9 +140,25 @@ const SubmitbuttonClick = (event) =>{
     event.preventDefault()
     allDone.style.display= "none"
     initialInput.style.display = "block"
-    typedName.textContent = element
-    scoredSpace.textContent = quizzScore
+    addItem()
 }
+
+
+function addItem () {
+    let ol = document.getElementById('dynamic-list')
+    let li = document.createElement('li')
+    let spanInitial = document.createElement('span')
+    let spanScore = document.createElement('span')
+    spanInitial.className = 'typedName'
+    spanScore.className = 'scoredSpace'
+    spanInitial.innerHTML = element
+    spanScore.innerHTML = ': ' + quizzScore
+    li.appendChild(spanInitial)
+    li.appendChild(spanScore)
+    ol.appendChild(li)
+}
+
+
 
 
 submitButton.addEventListener('click', SubmitbuttonClick)

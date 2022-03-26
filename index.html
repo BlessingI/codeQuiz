@@ -14,7 +14,7 @@
     <header class="container-fluid">
         <div class="row mx-2 my-2 d-flex justify-content-between">
             <a href="">View Highscores</a>
-            <p>Time:<span id="timer">60</span> seconds!</p>
+            <p>Time:<span id="timer">60</span> seconds left!</p>
         </div>
     </header>
 
@@ -101,13 +101,13 @@
     <div class="container text-center initialInput">
         <div class="row">
             <h3 class="col-12">Highscores</h3>
-            <ol class="list-group col-12">
-                <li class="list-group-item"><span class="typedName"></span>:<span class="scoredSpace"></span> </li>
+            <ol id="dynamic-list">
+                <!-- <li><span class="typedName"></span><span class="scoredSpace"></span> </li> -->
             </ol>
         </div>
         <div class="row mt-3 d-flex justify-content-center"> 
             <div class="column">
-                <button class="btn btn-primary" type="submit">Go Back</button>
+                <button class="btn btn-primary goback" type="submit">Go Back</button>
                 <button class="btn btn-primary" type="submit">Clear Scores</button>
             </div>
         </div>
