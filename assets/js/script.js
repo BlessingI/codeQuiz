@@ -14,11 +14,18 @@ let itemInput = document.querySelector("input[type=text]");
 let totalScore = document.querySelector('.totalScore');
 let questionSection = document.querySelector('.questionSection');
 let timeElm = document.getElementById('timer');
+let initialInput = document.querySelector('.initialInput')
+let submitButton = document.getElementById('submitButton')
+let typedName = document.querySelector('.typedName')
+let scoredSpace = document.querySelector('.scoredSpace')
+let element;
 let quizzScore = 0
 let setTime;
 let y;
 
-
+itemInput.addEventListener('input', function(event){
+    element = event.target.value
+})
 
 const quizzStart = () => {
     start.style.display ="none"
@@ -123,9 +130,16 @@ const seeAnswer3 = (event) => {
     stopFunction()
 }
 
+const SubmitbuttonClick = (event) =>{
+    event.preventDefault()
+    allDone.style.display= "none"
+    initialInput.style.display = "block"
+    typedName.textContent = element
+    scoredSpace.textContent = quizzScore
+}
 
 
-// button.addEventListener('click', buttonClick)
+submitButton.addEventListener('click', SubmitbuttonClick)
 box.addEventListener('click', seeAnswer)
 box1.addEventListener('click', seeAnswer1)
 box2.addEventListener('click', seeAnswer2)
