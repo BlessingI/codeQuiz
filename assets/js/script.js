@@ -1,5 +1,6 @@
 let startQuiz = document.querySelector('button');
 let goback = document.querySelector('.goback')
+let clear = document.querySelector('.clear')
 let start = document.querySelector('.start');
 let question = document.querySelector('.question');
 let question1 = document.querySelector('.question2');
@@ -30,8 +31,14 @@ let scoreList = []
 
 goback.addEventListener('click', function(event){
     initialInput.style.display = 'none'
-    start.style.display ="block"
+    window.location.reload()
 })
+
+clear.addEventListener('click', function(){
+    localStorage.clear();
+    scoreListEl.style.display = 'none'
+})
+
 
 itemInput.addEventListener('input', function(event){
     element = event.target.value
@@ -147,7 +154,6 @@ const SubmitbuttonClick = (event) =>{
     addItem()
 
     let init = spanInitial.textContent.toUpperCase();
-    console.log(init)
     scoreList.push({ initials: init, score: spanScore.textContent})
 
     // sort scores
@@ -170,7 +176,7 @@ const SubmitbuttonClick = (event) =>{
        
 }
 
-displayScores();
+
 
 function addItem () {
     let ol = document.getElementById('score-list')
@@ -191,7 +197,6 @@ function addItem () {
 
 function storeScores() {
     localStorage.setItem("scoreList", JSON.stringify(scoreList));
-    console.log(scoreList)
 }
 
 
@@ -216,3 +221,4 @@ box1.addEventListener('click', seeAnswer1)
 box2.addEventListener('click', seeAnswer2)
 box3.addEventListener('click', seeAnswer3)
 startQuiz.addEventListener('click', quizzStart)
+displayScores();
