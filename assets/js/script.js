@@ -17,12 +17,16 @@ let questionSection = document.querySelector('.questionSection');
 let timeElm = document.getElementById('timer');
 let initialInput = document.querySelector('.initialInput')
 let submitButton = document.getElementById('submitButton')
-// let typedName = document.querySelector('.typedName')
-// let scoredSpace = document.querySelector('.scoredSpace')
+// ordered list
+let scoreListEl = document.querySelector("#score-list");
+// const submitScrBtn = document.querySelector("#submit-score");
 let element;
 let quizzScore = 0;
 let setTime;
 let y;
+let spanInitial;
+let spanScore;
+let scoreList = []
 
 goback.addEventListener('click', function(event){
     initialInput.style.display = 'none'
@@ -101,7 +105,7 @@ const seeAnswer1 = (event) => {
 
 const seeAnswer2 = (event) => {
     let quest3 = event.target.dataset['number']
-    if(quest3 == 1) {
+    if(quest3 == 2) {
         quizzScore = quizzScore + 25
         answerTag.textContent = 'correct'
         setTimeout(() => {answerTag.textContent=""}, 300);
@@ -141,14 +145,38 @@ const SubmitbuttonClick = (event) =>{
     allDone.style.display= "none"
     initialInput.style.display = "block"
     addItem()
+
+    let init = spanInitial.textContent.toUpperCase();
+    console.log(init)
+    scoreList.push({ initials: init, score: spanScore.textContent})
+
+    // sort scores
+    scoreList = scoreList.sort((a, b) => {
+        if (a.score < b.score) {
+          return 1;
+        } else {
+          return -1;
+        }
+      });
+
+    scoreListEl.innerHTML="";
+    for (let i = 0; i < scoreList.length; i++) {
+        let li = document.createElement("li");
+        li.textContent = `${scoreList[i].initials} ${scoreList[i].score}`;
+        scoreListEl.append(li);
+    }
+    
+    storeScores();
+       
 }
 
+displayScores();
 
 function addItem () {
-    let ol = document.getElementById('dynamic-list')
+    let ol = document.getElementById('score-list')
     let li = document.createElement('li')
-    let spanInitial = document.createElement('span')
-    let spanScore = document.createElement('span')
+    spanInitial = document.createElement('span')
+    spanScore = document.createElement('span')
     spanInitial.className = 'typedName'
     spanScore.className = 'scoredSpace'
     spanInitial.innerHTML = element
@@ -161,6 +189,27 @@ function addItem () {
 
 
 
+function storeScores() {
+    localStorage.setItem("scoreList", JSON.stringify(scoreList));
+    console.log(scoreList)
+}
+
+
+
+function displayScores() {
+    // Get stored scores from localStorage
+    // Parsing the JSON string to an object
+    let storedScoreList = JSON.parse(localStorage.getItem("scoreList"));
+
+    // If scores were retrieved from localStorage, update the scorelist array to it
+    if (storedScoreList !== null) {
+        scoreList = storedScoreList;
+    }
+}
+
+
+
+// submitScrBtn.addEventListener("click", addScore);
 submitButton.addEventListener('click', SubmitbuttonClick)
 box.addEventListener('click', seeAnswer)
 box1.addEventListener('click', seeAnswer1)
