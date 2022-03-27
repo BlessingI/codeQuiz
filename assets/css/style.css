@@ -2,7 +2,7 @@
     display: none;
 }
 
-.box, .box1,.box2, .box3:hover {
+.box, .box1,.box2, .box3, .btnstart:hover {
     outline: none;
     cursor: pointer;
 }
